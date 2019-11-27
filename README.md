@@ -1,6 +1,6 @@
-### IQ SCM Audit
+## IQ SCM Audit
 
-#### Overview
+### Overview
 
 This tool will take a GitHub graphql repository search query to fetch a list of GitHub
 source code repositories and for each repository:
@@ -12,7 +12,17 @@ source code repositories and for each repository:
 - Download and evaluate policy against latest GitHub Packages assets
 - Create GitHub Issue in repository with results and hints on how to configure CI tools
 
-#### Setup
+### Setup
+
+#### GitHub Token
+
+The tool requires a [GitHub Personal Access Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to interact with the GitHub repositories. This token requires the `repo` scope and the `read:packages` scope.
+
+#### Nexus IQ CLI
+
+The tool requires that `nexus-iq-cli-1.78.0-02.jar` be available in `./iq/nexus-iq-cli-1.78.0-02.jar` relative to the tool binary. This can be achieved by cloning this source control repository and either building the binary or uncompressing the release in the root of the repository or [downloading the jar](./iq/nexus-iq-cli-1.78.0-02.jar) and copying it into an `iq` directory relative to the location of the binary.
+
+#### Best Results
 
 IQ SCM Audit works best when:
 
@@ -21,7 +31,7 @@ IQ SCM Audit works best when:
 - The JVM is installed to run a policy evaluation using the CLI. Note that if the JVM is not installed you must set
 skipIQEvaluations to true and there is no need to have a GitHub Release or Package.
 
-#### Usage
+### Usage
 
 ```
 Usage:
